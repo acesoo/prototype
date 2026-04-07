@@ -1,14 +1,14 @@
 class Horse implements Animal {
-    private int legs = 4;
-    private String sound = "Neigh";
+    private String color = "Brown";
+    private String food = "Oats";
 
     @Override
-    public Animal clone() {
-        return new Horse();
+    public Animal clone() { return new Horse(); }
+
+    @Override
+    public void makeSound() { 
+        System.out.println("Horse says: Neigh (Color: " + color + ", Eats: " + food + ")"); 
     }
-
-    @Override
-    public void makeSound() { System.out.println("Horse says: " + sound); }
 
     @Override
     public String getType() { return "Horse"; }
