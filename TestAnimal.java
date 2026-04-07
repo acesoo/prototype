@@ -1,21 +1,38 @@
 public class TestAnimal {
     public static void main(String[] args) {
         AnimalRegistry registry = new AnimalRegistry();
-
-        // Creating pairs of clones
+        
+        // Create first set of animals
         Animal sheep1 = registry.createSheep();
-        Animal sheep2 = registry.createSheep();
+        ((Sheep) sheep1).setName("Dolly");
+        
         Animal cow1 = registry.createCow();
-        Animal cow2 = registry.createCow();
+        ((Cow) cow1).setSound("Moo");
+        
         Animal horse1 = registry.createHorse();
+        ((Horse) horse1).setColor("Brown");
+        
+        // Display first set
+        System.out.println(sheep1.getType() + " name is " + ((Sheep) sheep1).getName());
+        System.out.println(cow1.getType() + " makes sound " + ((Cow) cow1).getSound());
+        System.out.println(horse1.getType() + " has color " + ((Horse) horse1).getColor());
+        
+        // Cloning animals message
+        System.out.println("\nCloning animals...\n");
+        
+        // Create second set of animals (clones)
+        Animal sheep2 = registry.createSheep();
+        ((Sheep) sheep2).setName("Shaun");
+        
+        Animal cow2 = registry.createCow();
+        ((Cow) cow2).setSound("Moo Moo");
+        
         Animal horse2 = registry.createHorse();
-
-        // Output matching your screenshot format
-        sheep1.makeSound();
-        sheep2.makeSound();
-        cow1.makeSound();
-        cow2.makeSound();
-        horse1.makeSound();
-        horse2.makeSound();
+        ((Horse) horse2).setColor("Black");
+        
+        // Display second set
+        System.out.println(sheep2.getType() + " name is " + ((Sheep) sheep2).getName());
+        System.out.println(cow2.getType() + " makes sound " + ((Cow) cow2).getSound());
+        System.out.println(horse2.getType() + " has color " + ((Horse) horse2).getColor());
     }
 }
